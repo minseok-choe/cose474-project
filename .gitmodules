@@ -1,0 +1,3 @@
+[submodule "document/dive-into-dl"]
+	path = document/dive-into-dl
+	url = https://github.com/minseok-choe/dive-into-dl
