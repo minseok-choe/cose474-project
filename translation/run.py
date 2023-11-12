@@ -302,7 +302,8 @@ def set_seed(seed=42):
     torch.cuda.manual_seed(seed)
     torch.backends.cudnn.deterministic = True
         
-def main():
+def main(main_args = None):
+    print("main is called!")
     parser = argparse.ArgumentParser()
 
     ## Required parameters  
@@ -377,7 +378,7 @@ def main():
     parser.add_argument('--seed', type=int, default=42,
                         help="random seed for initialization")
     # print arguments
-    args = parser.parse_args()
+    args = parser.parse_args(main_args) if (main_args) else parser.parse_args()
     logger.info(args)
 
     # Setup CUDA, GPU
