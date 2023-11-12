@@ -379,6 +379,12 @@ def main(main_args = None):
                         help="random seed for initialization")
     # print arguments
     args = parser.parse_args(main_args) if (main_args) else parser.parse_args()
+
+    logger.setLevel(logging.DEBUG)
+    logger_file_name = os.path.join(args.output_dir, "train.log" if args.do_train else "test.log")
+    file_handler = logging.FileHandler(logger_file_name)
+    logger.addHandler(file_handler)
+
     logger.info(args)
 
     # Setup CUDA, GPU
