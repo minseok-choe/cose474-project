@@ -155,8 +155,9 @@ class InputFeatures(object):
                  target_ids,
                  source_mask,
                  target_mask,
+                 type_notation_positions,
 
-    ):
+                 ):
         self.example_id = example_id
         self.source_ids = source_ids
         self.position_idx = position_idx
@@ -164,7 +165,9 @@ class InputFeatures(object):
         self.dfg_to_dfg = dfg_to_dfg
         self.target_ids = target_ids
         self.source_mask = source_mask
-        self.target_mask = target_mask       
+        self.target_mask = target_mask
+        self.type_notation_positions = type_notation_positions
+
         
 
 parsers={}        
